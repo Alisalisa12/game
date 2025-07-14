@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Найди Число</title>
+</head>
+
+<body>
+    <div class="game-section">
+
+        <!-- Стартовый экран -->
+        <div class="start-screen" id="startScreen">
+            <div class="start-screen__header header">
+                <h3 class="start-screen__title">Найди число</h3>
+                <p class="start-screen__text">Тренажер на внимание</p>
+            </div>
+
+            <div class="start-screen__description">
+                <h4 class="start-screen__subtitle">Тренирует:</h4>
+                <div class="start-screen__description-list">
+                    <ul class="start-screen__list">
+                        <li class="start-screen__list-item">
+                            <img src="icons/img-1.svg" class="start-screen__list-icon" alt="">
+                            <div class="start-screen__content">
+                                <h5 class="start-screen__item-title">Произвольное внимание</h5>
+                                <p class="start-screen__item-text">Научитесь концентрироваться только на важном</p>
+                            </div>
+                        </li>
+                        <li class="start-screen__list-item">
+                            <img src="icons/img-2.svg" class="start-screen__list-icon" alt="">
+                            <div class="start-screen__content">
+                                <h5 class="start-screen__item-title">Концентрация и переключение внимания</h5>
+                                <p class="start-screen__item-text">Позволит не упускать из виду важные детали</p>
+                            </div>
+                        </li>
+                        <li class="start-screen__list-item">
+                            <img src="icons/img-3.svg" class="start-screen__list-icon" alt="">
+                            <div class="start-screen__content">
+                                <h5 class="start-screen__item-title">Зрительное восприятие</h5>
+                                <p class="start-screen__item-text">Сможете быстро находить основные мысли в текстах</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="start-screen__btn">
+                <button id="startBtn" class="button__start">Далее</button>
+            </div>
+        </div>
+
+        <!-- Секция с обучением -->
+        <div class="game-tutorial container" id="tutorialScreen">
+            <div class="game-tutorial__number number">
+                <p class="game-tutorial__text">Найдите указанное число: <span>75</span></p>
+            </div>
+            <div class="game-tutorial__grid-wrapper">
+                <div class="game-tutorial__grid">
+                    <button class="game-tutorial__number-btn orange">
+                        75
+                        <img src="img/pointer.svg" alt="указатель" class="pointer">
+                    </button>
+                    <button class="game-tutorial__number-btn purple">1</button>
+                    <button class="game-tutorial__number-btn blue">35</button>
+                    <button class="game-tutorial__number-btn green">2</button>
+                    <button class="game-tutorial__number-btn green">885</button>
+                    <button class="game-tutorial__number-btn light-blue">40</button>
+                </div>
+            </div>
+            <p class="game-tutorial__continue">Нажмите на экран, чтобы продолжить</p>
+        </div>
+
+        <!-- Секция с таймером -->
+        <div class="countdown-screen container" id="countdownScreen">
+            <button class="countdown-screen__number" id="countdown">3</button>
+        </div>
+
+        <!-- Игровой экран -->
+        <div class="game-container container" id="gameContainer">
+            <div id="feedback" class="game-container__feedback"></div>
+
+            <div class="game-container__header">
+                <ul class="game-container__list">
+                    <li class="game-container__list-item">Время: <span id="timer">1:00</span></li>
+                    <li class="game-container__list-item">Уровень: <span id="level">1</span></li>
+                    <li class="game-container__list-item">Очки: <span id="score">0</span></li>
+                    <li class="game-container__list-item">Бонус: <span id="bonus">
+                            <span class="dot_filled"></span>
+                            <span class="dot_empty"></span>
+                            <span class="dot_empty"></span>
+                            <span class="dot_empty"></span>
+                            <span class="dot_empty"></span>
+                            <span class="bonus-count">X1</span>
+                        </span></li>
+                </ul>
+            </div>
+
+            <div class="game-container__number number">
+                <p class="game-container__text">Найдите указанное число: <span id="number">0</span></p>
+            </div>
+
+            <div class="game-container__grid-wrapper grid-wrapper">
+                <div id="grid" class="game-container__grid"></div>
+            </div>
+        </div>
+
+        <!-- Экран результатов -->
+        <div class="result-screen container" id="resultScreen">
+            <div class="result-screen__header header">
+                <h3 class="result-screen__title">Ваши результаты</h3>
+            </div>
+            <div class="result-screen__res">
+                <p class="result-screen__description">Текущий результат: <span id="finalScore">0</span></p>
+                <p class="result-screen__description">Верных ответов: <span id="correctAnswers">0</span> из <span
+                        id="totalAttempts">0</span></p>
+                <p class="result-screen__description">Точность: <span id="accuracy">0%</span></p>
+            </div>
+            <div class="result-screen__btn">
+                <button class="button__start" onclick="location.reload()">Еще раз?</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
